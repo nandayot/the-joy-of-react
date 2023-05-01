@@ -1,10 +1,11 @@
 import React from "react";
 import { checkGuess } from "../../game-helpers";
 
-function GuessInput({answer, guess, setGuess, 
-  guessResults, setGuessResults, setShowBanner,
-  inputDisable, setInputDisable}) {
-  
+function GuessInput({answer, guessResults, setGuessResults, setShowBanner}) {
+
+  const [guess, setGuess] = React.useState('');
+  const [inputDisable, setInputDisable] = React.useState(false);
+
   function guessFormHandler() {
     setGuess('');
     let correctAnswer = (guess === answer);
